@@ -18,12 +18,6 @@ android {
 		// lots of projects include these, and the duplicates wreak havoc at compile time with
 		// unexpected top level exceptions. Good times!
 		exclude 'META-INF/*'
-		exclude 'META-INF/LICENSE'
-		exclude 'META-INF/LICENSE.txt'
-		exclude 'META-INF/NOTICE'
-		exclude 'META-INF/NOTICE.txt'
-		exclude 'META-INF/DEPENDENCIES'
-		exclude 'META-INF/MANIFEST.MF'
 	}
 
 	productFlavors {
