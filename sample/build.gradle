@@ -4,7 +4,8 @@ android {
 
 	compileSdkVersion 19
 
-	buildToolsVersion "19.0.0"
+	// this hs to be at LEAST "19.0.1"
+	buildToolsVersion "19.0.2"
 
 	defaultConfig {
 		minSdkVersion 15
@@ -12,6 +13,19 @@ android {
 		versionCode 1
 		versionName "1.0"
 	}
+
+	packagingOptions {
+		// lots of projects include these, and the duplicates wreak havoc at compile time with
+		// unexpected top level exceptions. Good times!
+		exclude 'META-INF/*'
+		exclude 'META-INF/LICENSE'
+		exclude 'META-INF/LICENSE.txt'
+		exclude 'META-INF/NOTICE'
+		exclude 'META-INF/NOTICE.txt'
+		exclude 'META-INF/DEPENDENCIES'
+		exclude 'META-INF/MANIFEST.MF'
+	}
+
 	productFlavors {
 		amazon
 		google
@@ -26,9 +40,23 @@ android {
 
 }
 
+configurations {
+	provided
+}
+
 dependencies {
 	// if you look at the apk files:
 	// - the google version now has a 2M classes.dex
 	// - the amazon version now has a 4K classes.dex - it works!
-	googleCompile('com.google.android.gms:play-services:4.0.30')
+	googleCompile('com.google.android.gms:play-services:4.0.30') {
+		exclude group: 'com.android.support', module: 'support-v4'
+	}
+	compile 'com.android.support:support-v4:19.0.0'
+	amazonCompile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceSets{
+	main{
+		compileClasspath += configurations.provided
+	}
 }
