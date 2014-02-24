@@ -39,14 +39,15 @@ configurations {
 }
 
 dependencies {
-	// if you look at the apk files:
-	// - the google version now has a 2M classes.dex
-	// - the amazon version now has a 4K classes.dex - it works!
+
 	googleCompile('com.google.android.gms:play-services:4.0.30') {
 		exclude group: 'com.android.support', module: 'support-v4'
 	}
+
 	compile 'com.android.support:support-v4:19.0.0'
+
 	amazonCompile fileTree(dir: 'libs', include: ['*.jar'])
+
 }
 
 sourceSets{
