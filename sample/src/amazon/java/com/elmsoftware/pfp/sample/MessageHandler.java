@@ -9,7 +9,7 @@ public class MessageHandler extends ADMMessageHandlerBase {
 	private static final String TAG = MessageHandler.class.getName();
 
 	public MessageHandler() {
-		super("test handler");
+		super(MessageHandler.class.getName());
 	}
 
 	@Override
