@@ -12,6 +12,8 @@
 	 
 	<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE"/>
 
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
 	<application
 		android:allowBackup="true"
 		android:icon="@drawable/ic_launcher"
@@ -22,7 +24,9 @@
 			android:name="com.amazon.device.messaging"
 			android:required="true"/>
 
+		<service android:name=".MessageHandler" android:exported="false" />
 		<!-- same activities as main manifest -->
+
 	</application>
 
 </manifest>
