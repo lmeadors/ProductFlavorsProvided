@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.elmsoftware.pfp.sample.MainActivity" >
     
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+    <item android:id="@+id/view_map"
+        android:title="View Map"
+        android:showAsAction="always" />
 </menu>

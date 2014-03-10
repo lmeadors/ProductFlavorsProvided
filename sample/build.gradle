@@ -46,7 +46,7 @@ dependencies {
 
 	compile 'com.android.support:support-v4:19.0.0'
 
-	provided fileTree(dir: 'libs', include: ['*.jar'])
+	provided fileTree(dir: 'ext_libs', include: ['*.jar'])
 //  688472  02-24-14 08:20   classes.dex
 
 //	amazonCompile fileTree(dir: 'libs', include: ['*.jar'])
