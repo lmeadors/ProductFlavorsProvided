@@ -5,3 +5,6 @@ local.properties
 build/
 .idea/
 *.iml
+sample/src/amazon/gen/
+sample/src/main/gen/
+sample/src/google/gen/
