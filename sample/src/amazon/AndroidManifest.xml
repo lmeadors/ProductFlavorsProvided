@@ -14,7 +14,6 @@
 	<uses-permission android:name="com.elmsoftware.pfp.sample.permission.RECEIVE_ADM_MESSAGE"/>
 
 	<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE"/>
-	<amazon:enable-feature android:name="com.amazon.geo.maps" android:required="false" />
 
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -27,6 +26,9 @@
 		<amazon:enable-feature
 			android:name="com.amazon.device.messaging"
 			android:required="true"/>
+		<amazon:enable-feature 
+			android:name="com.amazon.geo.maps" 
+			android:required="false" />
 
 		<service android:name=".MessageHandler" android:exported="false" />
 		<!-- same activities as main manifest -->
