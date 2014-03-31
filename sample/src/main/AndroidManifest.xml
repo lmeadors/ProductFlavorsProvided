@@ -12,6 +12,11 @@
 		<amazon:enable-feature
 			android:name="com.amazon.device.messaging"
 			android:required="true"/>
+
+		<amazon:enable-feature 
+			android:name="com.amazon.geo.maps" 
+			android:required="false" />
+
 		<activity
 			android:name="com.elmsoftware.pfp.sample.MainActivity"
 			android:label="@string/app_name">
